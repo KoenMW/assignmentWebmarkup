@@ -34,7 +34,7 @@ li a
 	text-decoration: none;
 	background-color:blue;
 	font-size:20px;
-	border: solid 2px green;
+	border: solid 1px green;
 	width:75%;
 }
 
@@ -102,6 +102,7 @@ footer
 
 #cookie
 {
+	background-color: #FA0;
 	grid-area:cookieTag;
 	color: #FFF;
 	opacity: 50%;
@@ -153,6 +154,11 @@ footer
 	'article1Tag';
 }
 
+#tickets
+{	
+	grid-area:ticketsTag;
+}
+
 #article-grid-container> section
 {
 	background-color: red;
@@ -169,6 +175,8 @@ footer
 	'asideTag		asideTag		'
 	'footerTag		cookieTag		';
 }
+
+
 
 article
 {
@@ -349,6 +357,17 @@ footer
 		'footerTag		cookieTag		';
 	}
 	
+	/*#grid-container
+	{
+		grid-template-areas:
+		'headerTag	headerTag	'
+		'navTag		navTag		'
+		'ticketsTag	ticketsTag	'
+		'tableTag	tableTag	'
+		'asideTag	asideTag	'
+		'footerTag	cookieTag	';
+	}
+	*/
 	#navbar
 	{
 		display:block;
@@ -376,7 +395,7 @@ footer
 		'article6Tag	article6Tag';
 	}
 	
-	#aside
+	aside
 	{
 		grid-area:asideTag;
 		background-color: black;
@@ -386,6 +405,9 @@ footer
 		
 		grid-template-areas:
 		'product1Tag	product2Tag';	
+		
+		flex-basis: 100%;
+		order:3;
 	}
 
 	header
@@ -398,12 +420,6 @@ footer
 	{
 		flex-basis: 100%;
 		order:2;
-	}
-		
-	aside
-	{
-		flex-basis: 100%;
-		order:3;
 	}
 	
 	#movie
@@ -468,6 +484,12 @@ footer
 		display: inline;
 	}
 	
+	
+	table
+	{
+		grid-area: tableTag;
+	}
+	
 	#grid-container
 	{
 		grid-template-areas:
@@ -478,6 +500,17 @@ footer
 		'footerTag		cookieTag		';
 	}
 	
+	#grid-container
+	{
+			grid-template-areas:
+			'headerTag	headerTag	'
+			'navTag		navTag		'
+			'ticketsTag	ticketsTag	'
+			'tableTag	asideTag	'
+			'footerTag	cookieTag	';
+	}
+	
+	
 	#article-grid-container
 	{
 		grid-template-areas:
@@ -486,7 +519,7 @@ footer
 		'article5Tag	article6Tag	article6Tag';
 	}
 	
-	#aside
+	aside
 	{
 		grid-area:asideTag;
 		background-color: black;
@@ -496,6 +529,9 @@ footer
 		
 		grid-template-areas:
 		'product1Tag	product2Tag	product3Tag';	
+		
+		order: 5;
+		flex-basis: 26%;
 	}
 	
 	header
@@ -518,7 +554,8 @@ footer
 	
 	#article-flex
 	{
-		flex-basis: 66%;
+		flex-basis:64%;
+		flex:1;
 	}
 	
 	#article1
@@ -535,14 +572,6 @@ footer
 	{
 		order:3;
 	}
-	
-	aside
-	{
-		order: 5;
-		flex: 1;
-	}
-	
-	
-	
+
 }
 
