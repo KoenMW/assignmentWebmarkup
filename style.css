@@ -4,9 +4,12 @@ body
 	color: yellow;
 }
 
-#header
+header
 {
 	grid-area: headerTag; 
+	background-color: green;
+	border: solid 5px; 
+	padding: 20px 0px;
 }
 
 #navbar
@@ -30,7 +33,7 @@ li a
 	padding: 15px;
 	text-decoration: none;
 	background-color:blue;
-	font-size:25px;
+	font-size:20px;
 	border: solid 2px green;
 	width:75%;
 }
@@ -41,48 +44,17 @@ li a:hover
 	color: black;
 }
 
-#hamburger-icon span
-{
-	display: block;
-	margin:4px;
-	height: 9px;
-	width: 60px;
-	background-color: #135;
-	border-radius: 9px;
-	transition: .25s ease-in-out;
-}
-
-#hamburger-manu:checked ~ #hamburger-icon span:nth-child(1)
-{
-	transform: rotate(45deg) translate(5px,15px);
-}
-
-#hamburger-manu:checked ~ #hamburger-icon span:nth-child(2)
-{
-	opacity: 0;
-}
-
-#hamburger-manu:checked ~ #hamburger-icon span:nth-child(3)
-{
-	transform: rotate(-45deg) translate(3px,-15px);
-}
-
-#hamburger-manu:checked ~ #navbar
-{
-	display: block;
-}
-
-
 input[type="checkbox"]
 {	
- display:none;
+display:none;
 }
 
-
-
-#nav
+nav
 {
 	grid-area: navTag;
+	background-color: green;
+	border: solid 5px; 
+	padding: 20px 0px;
 }
 
 #product1
@@ -99,13 +71,14 @@ input[type="checkbox"]
 	grid-area:product3Tag;
 }
  
-#aside
+aside
 {
 	grid-area:asideTag;
-	background-color: black;
+	background-color: #354;
 	padding: 40px;
 	display: grid;
 	grid-gap: 20px;
+	border: solid #298 5px;
 	
 	grid-template-areas:
 	'product1Tag'
@@ -113,17 +86,19 @@ input[type="checkbox"]
 	'product3Tag';	
 }
 
-#aside>article
+aside>article
 {
 	border: solid gray;
 	background-color: #165;
 }
 
-#footer
+footer
 {
 	grid-area:footerTag;
+	background-color: green;
+	border: solid 5px; 
+	padding: 20px 0px;
 }
-
 
 #cookie
 {
@@ -151,7 +126,6 @@ input[type="checkbox"]
 #article4
 {
 	grid-area:article4Tag;
-	display: none;
 }
 
 #article5
@@ -161,8 +135,7 @@ input[type="checkbox"]
 
 #article6
 {
-	grid-area:article6Tag;
-	display: none;
+	grid-area:article6Tag
 }
 
 #article-grid-container
@@ -188,10 +161,7 @@ input[type="checkbox"]
 
 #grid-container
 {
-	border: solid 10px;
-	padding: 10px;
 	display: grid;
-	grid-gap: 20px;
 	
 	grid-template-areas:
 	'headerTag		navTag			'
@@ -200,25 +170,167 @@ input[type="checkbox"]
 	'footerTag		cookieTag		';
 }
 
-#grid-container > article
+article
 {
 	background-color: green;
 	border: solid 5px; 
 	padding: 20px 0px;
 }
 
-
-@media screen and (min-width: 481px) and (max-width: 1179)
+.flexparent
 {
-	#article6
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#article-flex
+{
+	display: flex;
+	flex-direction: column;
+	order: 4;
+	flex-basis: 100%;
+}
+
+	#article1
+	{
+		flex-basis: 100%;
+		order:3;
+	}
+		
+	#article2
+	{
+		flex-basis: 100%;
+		order:2;
+	}
+	
+	#article3
+	{
+		flex-basis: 100%;
+		order:1;
+	}
+
+footer
+	{
+		flex-basis: 66%;
+		order:6;
+	}
+	
+#cookie
+	{
+		order:7;
+		flex:1;
+	}
+
+
+
+@media screen and (max-width: 480px)
+{
+	
+	#hamburger-icon span
 	{
 		display: block;
+		margin:4px;
+		height: 9px;
+		width: 60px;
+		background-color: #135;
+		border-radius: 9px;
+		transition: .25s ease-in-out;
+	}
+
+	#hamburger-manu:checked ~ #hamburger-icon span:nth-child(1)
+	{
+		transform: rotate(45deg) translate(5px,15px);
+	}
+
+	#hamburger-manu:checked ~ #hamburger-icon span:nth-child(2)
+	{
+		opacity: 0;
+	}
+
+	#hamburger-manu:checked ~ #hamburger-icon span:nth-child(3)
+	{
+		transform: rotate(-45deg) translate(3px,-15px);
+	}
+
+	#hamburger-manu:checked ~ #navbar
+	{
+		display: block;
+	}
+	
+	input[type="checkbox"]
+	{	
+	display:none;
+	}
+	
+	#article4
+	{
+		display:none;
+	}
+
+	#article6
+	{
+		display: none;
+	}
+	
+	header
+	{
+		flex-basis: 45%;
+		flex: 1;
+		order: 1
+	}
+	
+	nav
+	{
+		flex-basis: 45%;
+		flex: 1;
+		order:2
+	}
+	
+	#movie
+	{
+		display:none;
+	}
+	
+	aside
+	{
+		flex-basis: 100%;
+		order:3;
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 481px) and (max-width: 1279px)
+{
+	#article4 
+	{
+		display:none;
 	}
 	
 	#product3
 	{
 		display:none;
 	}
+	
 	
 	#hamburger-icon
 	{
@@ -275,10 +387,55 @@ input[type="checkbox"]
 		grid-template-areas:
 		'product1Tag	product2Tag';	
 	}
+
+	header
+	{
+		flex-basis: 100%;
+		order:1;
+	}
+	
+	nav
+	{
+		flex-basis: 100%;
+		order:2;
+	}
+		
+	aside
+	{
+		flex-basis: 100%;
+		order:3;
+	}
+	
+	#movie
+	{
+		flex-basis: 100%;
+		order:4;
+	}
+	
+
 }
 
 
-@media screen and (min-width: 1280px) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1279px) 
 {
 	#article6
 	{
@@ -340,5 +497,52 @@ input[type="checkbox"]
 		grid-template-areas:
 		'product1Tag	product2Tag	product3Tag';	
 	}
+	
+	header
+	{
+		flex-basis:100%;
+		order:1;
+	}
+	
+	nav
+	{
+		flex-basis:100%;
+		order:2;
+	}
+	
+	#movie
+	{
+		flex-basis:100%;
+		order:3;
+	}
+	
+	#article-flex
+	{
+		flex-basis: 66%;
+	}
+	
+	#article1
+	{
+		order:1;
+	}
+	
+	#article2
+	{
+		order:2;
+	}
+	
+	#article3
+	{
+		order:3;
+	}
+	
+	aside
+	{
+		order: 5;
+		flex: 1;
+	}
+	
+	
+	
 }
 
