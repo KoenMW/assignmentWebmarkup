@@ -1,0 +1,344 @@
+body
+{
+	background-color: black;
+	color: yellow;
+}
+
+#header
+{
+	grid-area: headerTag; 
+}
+
+#navbar
+{
+	display:none;
+}
+
+
+#navbar>ul 
+{
+	list-style-type:none;
+	margin: 0;
+	padding:0;
+}
+
+li a
+{
+	float:left;
+	color: white;
+	text-align: center;
+	padding: 15px;
+	text-decoration: none;
+	background-color:blue;
+	font-size:25px;
+	border: solid 2px green;
+	width:75%;
+}
+
+li a:hover
+{
+	background-color:lightblue;
+	color: black;
+}
+
+#hamburger-icon span
+{
+	display: block;
+	margin:4px;
+	height: 9px;
+	width: 60px;
+	background-color: #135;
+	border-radius: 9px;
+	transition: .25s ease-in-out;
+}
+
+#hamburger-manu:checked ~ #hamburger-icon span:nth-child(1)
+{
+	transform: rotate(45deg) translate(5px,15px);
+}
+
+#hamburger-manu:checked ~ #hamburger-icon span:nth-child(2)
+{
+	opacity: 0;
+}
+
+#hamburger-manu:checked ~ #hamburger-icon span:nth-child(3)
+{
+	transform: rotate(-45deg) translate(3px,-15px);
+}
+
+#hamburger-manu:checked ~ #navbar
+{
+	display: block;
+}
+
+
+input[type="checkbox"]
+{	
+ display:none;
+}
+
+
+
+#nav
+{
+	grid-area: navTag;
+}
+
+#product1
+{
+	grid-area:product1Tag;
+}
+#product2
+{
+	grid-area:product2Tag;
+}
+
+#product3
+{
+	grid-area:product3Tag;
+}
+ 
+#aside
+{
+	grid-area:asideTag;
+	background-color: black;
+	padding: 40px;
+	display: grid;
+	grid-gap: 20px;
+	
+	grid-template-areas:
+	'product1Tag'
+	'product2Tag'
+	'product3Tag';	
+}
+
+#aside>article
+{
+	border: solid gray;
+	background-color: #165;
+}
+
+#footer
+{
+	grid-area:footerTag;
+}
+
+
+#cookie
+{
+	grid-area:cookieTag;
+	color: #FFF;
+	opacity: 50%;
+	z-index:9999;
+}
+
+#article1
+{
+	grid-area:article1Tag;
+}
+
+#article2
+{
+	grid-area:article2Tag;
+}
+
+#article3
+{
+	grid-area:article3Tag;
+}
+
+#article4
+{
+	grid-area:article4Tag;
+	display: none;
+}
+
+#article5
+{
+	grid-area:article5Tag;
+}
+
+#article6
+{
+	grid-area:article6Tag;
+	display: none;
+}
+
+#article-grid-container
+{
+	grid-area:articleGridTag;
+	background-color: black;
+	padding: 40px;
+	display: grid;
+	grid-gap: 20px;
+	
+	grid-template-areas:
+	'article5Tag'
+	'article3Tag'
+	'article2Tag'
+	'article1Tag';
+}
+
+#article-grid-container> section
+{
+	background-color: red;
+	border: solid aqua; 	
+}
+
+#grid-container
+{
+	border: solid 10px;
+	padding: 10px;
+	display: grid;
+	grid-gap: 20px;
+	
+	grid-template-areas:
+	'headerTag		navTag			'
+	'articleGridTag	articleGridTag	'
+	'asideTag		asideTag		'
+	'footerTag		cookieTag		';
+}
+
+#grid-container > article
+{
+	background-color: green;
+	border: solid 5px; 
+	padding: 20px 0px;
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 1179)
+{
+	#article6
+	{
+		display: block;
+	}
+	
+	#product3
+	{
+		display:none;
+	}
+	
+	#hamburger-icon
+	{
+		display:none;
+	}
+	
+	
+	
+	#grid-container
+	{
+		grid-template-areas:
+		'headerTag		headerTag		'
+		'navTag			navTag			'
+		'articleGridTag	articleGridTag	'
+		'asideTag		asideTag		'
+		'footerTag		cookieTag		';
+	}
+	
+	#navbar
+	{
+		display:block;
+		width:100%;
+	}
+	
+	li a
+	{
+		float:none;
+	}
+	
+	li
+	{
+		display: inline;
+	}
+
+	#article-grid-container
+	{
+		grid-template-areas:
+		'article1Tag	article2Tag'
+		'article1Tag	article2Tag'
+		'article3Tag	article2Tag'
+		'article3Tag	article5Tag'
+		'article3Tag	article5Tag'
+		'article6Tag	article6Tag';
+	}
+	
+	#aside
+	{
+		grid-area:asideTag;
+		background-color: black;
+		padding: 40px;
+		display: grid;
+		grid-gap: 20px;
+		
+		grid-template-areas:
+		'product1Tag	product2Tag';	
+	}
+}
+
+
+@media screen and (min-width: 1280px) 
+{
+	#article6
+	{
+		display: block;
+	}
+	
+	#article4
+	{
+		display: block;
+	}
+	
+	#hamburger-icon
+	{
+		display:none;
+	}
+	
+	#navbar
+	{
+		display:block;
+		width:100%;
+	}
+	
+	li a
+	{
+		float:none;
+	}
+	
+	li
+	{
+		display: inline;
+	}
+	
+	#grid-container
+	{
+		grid-template-areas:
+		'headerTag		headerTag		'
+		'navTag			navTag			'
+		'articleGridTag	articleGridTag	'
+		'asideTag		asideTag		'
+		'footerTag		cookieTag		';
+	}
+	
+	#article-grid-container
+	{
+		grid-template-areas:
+		'article2Tag	article1Tag	article3Tag'
+		'article5Tag	article1Tag	article4Tag'
+		'article5Tag	article6Tag	article6Tag';
+	}
+	
+	#aside
+	{
+		grid-area:asideTag;
+		background-color: black;
+		padding: 40px;
+		display: grid;
+		grid-gap: 20px;
+		
+		grid-template-areas:
+		'product1Tag	product2Tag	product3Tag';	
+	}
+}
+
