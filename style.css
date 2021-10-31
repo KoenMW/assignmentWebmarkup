@@ -18,12 +18,6 @@ header
 }
 
 
-#navbar>ul 
-{
-	list-style-type:none;
-	margin: 0;
-	padding:0;
-}
 
 li a
 {
@@ -44,6 +38,11 @@ li a:hover
 	color: black;
 }
 
+a:visited
+{
+	color: red;
+}
+
 input[type="checkbox"]
 {	
 display:none;
@@ -57,10 +56,16 @@ nav
 	padding: 20px 0px;
 }
 
+img
+{
+	width:50%;
+}
+
 #product1
 {
 	grid-area:product1Tag;
 }
+
 #product2
 {
 	grid-area:product2Tag;
@@ -70,6 +75,29 @@ nav
 {
 	grid-area:product3Tag;
 }
+
+#ticketsproduct1
+{
+	grid-area:ticketsproduct1Tag;
+}
+
+#ticketsproduct2
+{
+	grid-area:ticketsproduct2Tag;
+}
+
+#ticketsproduct3
+{
+	grid-area:ticketsproduct3Tag;
+}
+
+#table
+	{
+		grid-area: tableTag;
+		background-color: green;
+		border: solid 5px; 
+		padding: 20px 0px;
+	}
  
 aside
 {
@@ -91,6 +119,20 @@ aside>article
 	border: solid gray;
 	background-color: #165;
 }
+
+
+
+
+#ticketsaside
+{
+	grid-area:ticketsasideTag;
+	
+	grid-template-areas:
+	'ticketsproduct1Tag'
+	'ticketsproduct2Tag'
+	'ticketsproduct3Tag';	
+}
+
 
 footer
 {
@@ -154,7 +196,7 @@ footer
 	'article1Tag';
 }
 
-#tickets
+#ticketsinfo
 {	
 	grid-area:ticketsTag;
 }
@@ -175,7 +217,6 @@ footer
 	'asideTag		asideTag		'
 	'footerTag		cookieTag		';
 }
-
 
 
 article
@@ -199,40 +240,123 @@ article
 	flex-basis: 100%;
 }
 
-	#article1
-	{
-		flex-basis: 100%;
-		order:3;
-	}
-		
-	#article2
-	{
-		flex-basis: 100%;
-		order:2;
-	}
+#article1
+{
+	flex-basis: 100%;
+	order:3;
+}
 	
-	#article3
-	{
-		flex-basis: 100%;
-		order:1;
-	}
+#article2
+{
+	flex-basis: 100%;
+	order:2;
+}
+
+#article3
+{
+	flex-basis: 100%;
+	order:1;
+}
 
 footer
-	{
-		flex-basis: 66%;
-		order:6;
-	}
+{
+	flex-basis: 66%;
+	order:6;
+}
 	
 #cookie
+{
+	order:7;
+	flex:1;
+}
+form
+{	
+	grid-area:formTag;
+	background-color: green;
+	border: solid 5px; 
+	padding: 20px 0px;
+}
+
+#contactinfo
+{
+	grid-area:contactinfoTag;
+}
+
+#contactproduct1
+{	
+	grid-area:contactproduct1Tag;
+}
+
+#contactproduct2
+{	
+	grid-area:contactproduct2Tag;
+}
+
+#contactproduct3
+{	
+	grid-area:contactproduct3Tag;
+}
+
+#contactaside
 	{
-		order:7;
-		flex:1;
+		grid-area:contactasideTag;
+		grid-template-areas:
+		'contactproduct1Tag'
+		'contactproduct2Tag'
+		'contactproduct3Tag';
 	}
 
+	#tickets-grid-container
+	{
+		display: grid;
+		
+		grid-template-areas:
+		'headerTag			navTag			'
+		'tableTag			tableTag		'
+		'ticketsasideTag	ticketsasideTag	'
+		'footerTag			cookieTag		';
+	}
+
+	#contact-grid-container
+	{
+		display: grid;
+		
+		grid-template-areas:
+		'headerTag			navTag			'
+		'contactinfoTag		contactinfoTag	'
+		'formTag			formTag			'
+		'contactasideTag	contactasideTag	'
+		'footerTag			cookieTag		';
+	}
+	
+	
+/* ik heb voor elke pagina die de aside gebtuikt een nieuwe aside tag moeten maken
+ik had dat niet in het begin gedaan waardoor ik heel veel tijd heb verspilt
+en ik weet niet zeker of het echt de bedoeling is maar ik heb niet honderd dingen in de table in tickets.html gevult met links naar tui daar waren er ook niet genoeg voor
+*/
 
 
 @media screen and (max-width: 480px)
-{
+{	
+	img
+	{
+		margin:10px;
+		width: 90%;
+	}	
+	#ticketsinfo
+	{
+		display: none;
+	}
+	
+	#product1
+	{
+		display:block;
+	}
+	
+	#product3
+	{
+		display:block;
+	}
 	
 	#hamburger-icon span
 	{
@@ -263,6 +387,11 @@ footer
 	#hamburger-manu:checked ~ #navbar
 	{
 		display: block;
+	}
+	
+	ul > li
+	{
+		display: inline;
 	}
 	
 	input[type="checkbox"]
@@ -305,34 +434,14 @@ footer
 		order:3;
 	}
 	
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (min-width: 481px) and (max-width: 1279px)
 {
-	#article4 
+	img
 	{
-		display:none;
-	}
+		float:left;
+	}	
 	
 	#product3
 	{
@@ -340,12 +449,20 @@ footer
 	}
 	
 	
+	#article4 
+	{
+		display:none;
+	}
+	
 	#hamburger-icon
 	{
 		display:none;
 	}
 	
-	
+	#ticketsproduct1
+	{
+		display:none;
+	}
 	
 	#grid-container
 	{
@@ -357,17 +474,27 @@ footer
 		'footerTag		cookieTag		';
 	}
 	
-	/*#grid-container
+	#tickets-grid-container
 	{
 		grid-template-areas:
-		'headerTag	headerTag	'
-		'navTag		navTag		'
-		'ticketsTag	ticketsTag	'
-		'tableTag	tableTag	'
-		'asideTag	asideTag	'
-		'footerTag	cookieTag	';
+		'headerTag			headerTag		'
+		'navTag				navTag			'
+		'ticketsTag			ticketsTag		'
+		'tableTag			tableTag		'
+		'ticketsasideTag	ticketsasideTag	'
+		'footerTag			cookieTag		';
 	}
-	*/
+	
+	#contact-grid-container
+	{
+		grid-template-areas:
+		'headerTag		headerTag			'
+		'navTag			navTag				'
+		'contactinfoTag	contactinfoTag		'
+		'formTag		contactasideTag		'
+		'footerTag		cookieTag			';
+	}
+	
 	#navbar
 	{
 		display:block;
@@ -379,7 +506,7 @@ footer
 		float:none;
 	}
 	
-	li
+	ul > li
 	{
 		display: inline;
 	}
@@ -397,18 +524,19 @@ footer
 	
 	aside
 	{
-		grid-area:asideTag;
-		background-color: black;
-		padding: 40px;
-		display: grid;
-		grid-gap: 20px;
-		
 		grid-template-areas:
 		'product1Tag	product2Tag';	
 		
 		flex-basis: 100%;
 		order:3;
 	}
+	
+	#ticketsaside
+	{
+		grid-template-areas:
+		'ticketsproduct2Tag	ticketsproduct3Tag';	
+	}
+	
 
 	header
 	{
@@ -431,28 +559,13 @@ footer
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (min-width: 1279px) 
 {
+	img
+	{
+		float:right;
+	}	
+	
 	#article6
 	{
 		display: block;
@@ -474,20 +587,14 @@ footer
 		width:100%;
 	}
 	
-	li a
+	ul>li a
 	{
 		float:none;
 	}
 	
-	li
+	ul>li
 	{
 		display: inline;
-	}
-	
-	
-	table
-	{
-		grid-area: tableTag;
 	}
 	
 	#grid-container
@@ -500,17 +607,28 @@ footer
 		'footerTag		cookieTag		';
 	}
 	
-	#grid-container
+	
+	#tickets-grid-container
 	{
-			grid-template-areas:
-			'headerTag	headerTag	'
-			'navTag		navTag		'
-			'ticketsTag	ticketsTag	'
-			'tableTag	asideTag	'
-			'footerTag	cookieTag	';
+		grid-template-areas:
+		'headerTag	headerTag		'
+		'navTag		navTag			'
+		'ticketsTag ticketsTag		'
+		'tableTag	ticketsasideTag	'
+		'footerTag	cookieTag		';
 	}
 	
 	
+	#contact-grid-container
+	{
+		grid-template-areas:
+		'headerTag		headerTag			'
+		'navTag			navTag				'
+		'contactinfoTag	contactinfoTag		'
+		'formTag		contactasideTag		'
+		'footerTag		cookieTag			';
+	}
+		
 	#article-grid-container
 	{
 		grid-template-areas:
@@ -521,12 +639,6 @@ footer
 	
 	aside
 	{
-		grid-area:asideTag;
-		background-color: black;
-		padding: 40px;
-		display: grid;
-		grid-gap: 20px;
-		
 		grid-template-areas:
 		'product1Tag	product2Tag	product3Tag';	
 		
