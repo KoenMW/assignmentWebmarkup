@@ -6,10 +6,16 @@ body
 
 header
 {
+	color: black;
 	grid-area: headerTag; 
-	background-color: green;
-	border: solid 5px; 
+	background-color: white;
+	border:5px double; 
 	padding: 20px 0px;
+}
+
+h3>img
+{
+	width:50px;
 }
 
 #navbar
@@ -53,7 +59,13 @@ nav
 	grid-area: navTag;
 	background-color: green;
 	border: solid 5px; 
+	border-color:#ECB;
 	padding: 20px 0px;
+}
+
+video
+{
+	width:100%;
 }
 
 img
@@ -97,7 +109,23 @@ img
 		background-color: green;
 		border: solid 5px; 
 		padding: 20px 0px;
+		color:black;
 	}
+	
+table:first-child
+{
+	background-color:#FF0;
+}
+
+table:nth-child(even)
+{
+	background-color:#CFF;
+}
+
+table:nth-child(odd)
+{
+	background-color:#FFF;
+}
  
 aside
 {
@@ -338,22 +366,23 @@ en ik weet niet zeker of het echt de bedoeling is maar ik heb niet honderd dinge
 
 @media screen and (max-width: 480px)
 {	
+	h3
+	{
+		display: none;
+	}
+	
 	img
 	{
 		margin:10px;
 		width: 90%;
+		border-width: 5em;
 	}	
 	#ticketsinfo
 	{
 		display: none;
 	}
 	
-	#product1
-	{
-		display:block;
-	}
-	
-	#product3
+	#product1, #product3
 	{
 		display:block;
 	}
@@ -394,19 +423,9 @@ en ik weet niet zeker of het echt de bedoeling is maar ik heb niet honderd dinge
 		display: inline;
 	}
 	
-	input[type="checkbox"]
+	input[type="checkbox"],#article4, #article6
 	{	
 	display:none;
-	}
-	
-	#article4
-	{
-		display:none;
-	}
-
-	#article6
-	{
-		display: none;
 	}
 	
 	header
@@ -432,6 +451,7 @@ en ik weet niet zeker of het echt de bedoeling is maar ik heb niet honderd dinge
 	{
 		flex-basis: 100%;
 		order:3;
+		word-spacing:20px;
 	}
 	
 }
@@ -673,6 +693,7 @@ en ik weet niet zeker of het echt de bedoeling is maar ik heb niet honderd dinge
 	#article1
 	{
 		order:1;
+		line-height:60px;
 	}
 	
 	#article2
@@ -683,6 +704,7 @@ en ik weet niet zeker of het echt de bedoeling is maar ik heb niet honderd dinge
 	#article3
 	{
 		order:3;
+		text-indent: 50px;
 	}
 
 }
